@@ -117,12 +117,12 @@ tile_set = SubResource("TileSet_iywne")
 script = ExtResource("2_lbhrr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
-position = Vector2(-2, -29)
+position = Vector2(0, -26)
 sprite_frames = SubResource("SpriteFrames_u5sy4")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2(-1, -27)
+position = Vector2(0, -25)
 shape = SubResource("CircleShape2D_lnu2h")
 
 [node name="Camera" type="Camera2D" parent="Character"]
