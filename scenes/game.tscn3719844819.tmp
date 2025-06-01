@@ -85,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0tnpc")
 }],
-"loop": false,
+"loop": true,
 "name": &"backpack",
 "speed": 5.0
 }, {
@@ -96,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vtaks")
 }],
-"loop": false,
+"loop": true,
 "name": &"gun",
 "speed": 5.0
 }, {
@@ -139,9 +139,9 @@ tile_set = SubResource("TileSet_iywne")
 script = ExtResource("2_lbhrr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
-position = Vector2(0, -29)
+position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_u5sy4")
-animation = &"gun"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2(0, -30)
@@ -159,5 +159,3 @@ position = Vector2(0, -17)
 rotation = 3.14159
 scale = Vector2(873.122, -14.1051)
 zoom = Vector2(4, 4)
-
-[connection signal="animation_finished" from="Character/AnimatedSprite2D" to="Character" method="_on_animated_sprite_animation_finished"]
