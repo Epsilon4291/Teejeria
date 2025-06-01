@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ohy0f3jvf3wt" path="res://assets/dirt/tileset_dirt_and_grass_1.png" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://yg7n7yqqs5m" path="res://scripts/character.gd" id="2_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://rao3bni3oftd" path="res://assets/pixil-frame-0 (2).png" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://1md7aigw2bf3" path="res://assets/paint34114018.png" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://l55dl004vai6" path="res://assets/pixil-frame-0 (3).png" id="4_p57ef"]
+[ext_resource type="Texture2D" uid="uid://bwo5gukjy7acv" path="res://assets/pixil-frame-resized.png" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_yqjtg")
@@ -64,20 +64,20 @@ atlas = ExtResource("4_p57ef")
 region = Rect2(46, 60, 23, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
-atlas = ExtResource("4_iywne")
-region = Rect2(0, 0, 24, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
-atlas = ExtResource("4_iywne")
-region = Rect2(42, 30, 21, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
-atlas = ExtResource("4_iywne")
-region = Rect2(21, 30, 21, 30)
+atlas = ExtResource("5_iywne")
+region = Rect2(0, 0, 22, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5sy4"]
-atlas = ExtResource("4_iywne")
-region = Rect2(0, 30, 21, 30)
+atlas = ExtResource("5_iywne")
+region = Rect2(42, 25, 21, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvpfn"]
+atlas = ExtResource("5_iywne")
+region = Rect2(21, 25, 21, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dinhu"]
+atlas = ExtResource("5_iywne")
+region = Rect2(0, 25, 21, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u5sy4"]
 animations = [{
@@ -110,13 +110,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lbhrr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iywne")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_u5sy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvpfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dinhu")
 }],
 "loop": true,
 "name": &"walking",
@@ -139,9 +139,11 @@ tile_set = SubResource("TileSet_iywne")
 script = ExtResource("2_lbhrr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
-position = Vector2(0, -29)
+position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_u5sy4")
 animation = &"gun"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2(0, -30)

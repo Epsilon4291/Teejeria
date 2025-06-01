@@ -4,12 +4,25 @@ extends CharacterBody2D
 const SPEED = 75.0
 const JUMP_VELOCITY = -200.0
 
+@onready var main = get_tree().get_root().get_node("Game")
+@onready var projectile = load("res://scenes/projectile.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 
 var shooting: bool
 
 func _ready() -> void:
 	shooting = false
+
+func shoot():
+	var direction = -1.0 if animated_sprite.flip_h else 1.0
+	
+	var instance = projectile.instantiate()
+	instance.dir = direction
+	instance.spawnPos = Vector2(direction * global_position.x + 7, global_position.y - 30)
+	instance.spawnRot = rotation
+	instance.zdex = z_index - 1
+	instance._scale = Vector2(0.25,0.25)
+	main.add_child.call_deferred(instance)
 
 func _physics_process(delta: float) -> void:	
 	# Add the gravity.
@@ -54,4 +67,5 @@ func _input(event):
 
 
 func _on_animated_sprite_animation_finished() -> void:
+	shoot()
 	shooting = false
